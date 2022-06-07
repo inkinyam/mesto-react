@@ -29,7 +29,7 @@ const Main = ({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) => {
       .catch((err) => console.error(err));
   }, [])
 
-
+/* возвращаемый объект */
   return (
     <main className="content content_visible">
       <section className="profile">

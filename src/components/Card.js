@@ -6,6 +6,7 @@ const Card= ({card, onCardClick}) => {
     onCardClick(card); 
   };
 
+  /* возвращаемый объект */
   return (
     <div className="place">
       <button className="place__button-delete" type="button"></button>

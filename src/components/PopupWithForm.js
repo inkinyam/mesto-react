@@ -1,5 +1,6 @@
 
 const PopupWithForm = ({name, onClose, title, children, btnText, isOpen}) => {
+  /* возвращаемый объект */
   return (
     <div className={`popup popup-${name}`+ (isOpen && ' popup_opened')}>
         <form className="popup__wrapper edit-form" name={`${name}Form`} action="#" noValidate>

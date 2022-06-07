@@ -1,5 +1,6 @@
 
 const ImagePopup= ({card, onClose}) => {
+  /* возвращаемый объект */
   return (
     <div className={`popup popup-photo`+`${card.name !== '' ? ' popup_opened' : ''}`}>
       <div className="popup__figure">
