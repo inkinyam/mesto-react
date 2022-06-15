@@ -34,6 +34,9 @@ const App = () => {
   /*хук на определение выбранной карточки*/
   const [selectedCard, setSelectedCard]                  = React.useState({name: '', link: ''});
 
+  /*хук карточек*/ 
+  const [cards, setCards] = React.useState([]);
+    
 
   /* обработчики  */
   const handleOpenEditPopup = ()=> {
@@ -79,9 +82,6 @@ const App = () => {
       .catch((err) => console.error(err));
   }
 
-  /*хук карточек*/ 
-  const [cards, setCards] = React.useState([]);
-    
   /*получаем карточки с api*/ 
   React.useEffect(()=>{
     api.getCards()
@@ -91,6 +91,10 @@ const App = () => {
       .catch((err) => console.error(err));
   }, [])
 
+  const renewCards = (newCard, id) => {
+    setCards((state) => state.map((c) => c._id === id ? newCard : c));
+  }
+
   /* обработчик нажатия кнопки лайк на карточке*/ 
   const handleCardLike = (card) => {
      const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -99,13 +103,13 @@ const App = () => {
     if (isLiked) {
       api.deleteLike(card._id, !isLiked)
         .then((newCard) => {
-          setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+          renewCards(newCard, card._id)
         })
         .catch((err) => console.error(err));
     } else {
       api.putLike(card._id, isLiked)
         .then((newCard) => {
-          setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+          renewCards(newCard, card._id)
         })
         .catch((err) => console.error(err));
       }
