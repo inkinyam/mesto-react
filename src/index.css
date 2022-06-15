@@ -33,8 +33,11 @@
 @import url(../src/blocks/place/__text/place__text.css);
 @import url(../src/blocks/place/__button-like/place__button-like.css);
 @import url(../src/blocks/place/__button-like/_active/place__button-like_active.css);
+@import url(../src/blocks/place/__button-like/_active/place__button-like_unactive.css);
 @import url(../src/blocks/place/__image/place__image.css);
 @import url(../src/blocks/place/__button-delete/place__button-delete.css);
+@import url(../src/blocks/place/__button-delete/_visible/place__button-delete_visible.css);
+@import url(../src/blocks/place/__button-delete/_visible/place__button-delete_hidden.css);
 @import url(../src/blocks/place/__like-container/place__like-container.css);
 @import url(../src/blocks/place/__like-counter/place__like-counter.css);
 
