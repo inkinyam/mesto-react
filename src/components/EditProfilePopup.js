@@ -26,6 +26,7 @@ const EditProfilePopup = ({isOpen, onClose, onUpdateUser}) => {
     setDescription(currentUser.about);
     }, [currentUser]); 
 
+  /*обработчик сабмита формы*/
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -37,6 +38,7 @@ const EditProfilePopup = ({isOpen, onClose, onUpdateUser}) => {
     onClose();
   }
 
+  /*возвращаемый объект*/
   return (
     <PopupWithForm  name     = 'edit' 
                     title    = 'Редактировать профиль'

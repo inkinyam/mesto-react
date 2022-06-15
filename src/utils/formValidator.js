@@ -79,3 +79,26 @@ export default class FormValidator {
 }
 
 
+//переменная в которой хранятся данные с селекторами для создания экз.класса валидации формы
+const data =  {inputElement: '.popup__item',
+              submitButtonSelector:'.popup__button_type_save',
+              inactiveButtonClass:'popup__button_type_disabled',
+              inputErrorClass: 'popup__item_type_wrong',
+              spanErrorClass: 'popup__span-error_active'}
+
+const addForm    = document.querySelector('.add-form');
+const editForm   = document.querySelector('.edit-form');
+const editAvatarForm = document.querySelector('.update-avatar-form');
+
+//создание экземпляров валидаторов для каждой формы
+  //добавление фото
+  const addFormValidator = new FormValidator (data, addForm);
+  addFormValidator.enableValidation();
+    //редактирование профиля
+  const editFormValidator = new FormValidator (data, editForm);
+  editFormValidator.enableValidation();
+    //редактирование аватара профиля
+  const editAvatarValidator = new FormValidator (data, editAvatarForm);
+  editAvatarValidator.enableValidation();
+
+  export {addFormValidator, editFormValidator, editAvatarValidator};
